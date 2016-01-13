@@ -1,4 +1,4 @@
-?>
+<?php ?>
 <div id="container">
     <div class="innerleft">
         <form action="?" method="post">
@@ -7,6 +7,12 @@
             <div class="links">Composer:</div>
             <div class="rechts">
                 <select name="ComposersID" style="width:125px">
+                    <?php
+                        foreach ($this->vars["composers"] as $row)
+                        {
+                            echo '<option value="'.$row->getID().'"> '.$row->getComposerLastname().' </option>';
+                        }
+                    ?> <!--
                     <option value="1"> Albeniz </option>
                     <option value="Bach"> Bach </option>
                     <option value="Bartok"> Bartok </option>
@@ -36,7 +42,7 @@
                     <option value="Shostakovich"> Shostakovich </option>
                     <option value="Sibelius"> Sibelius </option>
                     <option value="Tchaikovsky"> Tchaikovsky </option>
-                    <option value="Liszt"> Liszt </option>
+                    <option value="Liszt"> Liszt </option> -->
                 </select>
             </div>
 

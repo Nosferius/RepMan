@@ -50,8 +50,20 @@ class composers{
     public function fetch()
     {
         $sql = 'SELECT * FROM Composers';
+        $return = [];
         // uiteindelijk resultaat zoiets als 'SELECT $scope FROM $table WHERE $choice <optional> AND $choice2 </optional> etc.
-        foreach ($this->con->query($sql) as $row) {
+        foreach ($this->con->query($sql) as $row)
+        {
+            $composer = new composers();
+            $composer->setId($row["ID"]);
+            $composer->setComposerLastname($row["ComposerLastname"]);
+            $composer->setComposerFirstname($row["ComposerFirstname"]);
+            $composer->setDateOfBirth($row["DateOfBirth"]);
+            $composer->setPlaceOfBirth($row["PlaceOfBirth"]);
+            $composer->setBirthCountry($row["BirthCountry"]);
+            $composer->setDeceased($row["Deceased"]);
+            $return[] = $composer;
+            /*
             print $row['ID'] . "\t";
             print $row['ComposerFirstname'] . "\t";
             print $row['ComposerLastname'] . "\t";
@@ -59,7 +71,9 @@ class composers{
             print $row['PlaceOfBirth'] . "\t";
             print $row['BirthCountry'] . "\t";
             print $row['Deceased'] . "\n";
+            */
         }
+        return $return;
     }
 
     /**
