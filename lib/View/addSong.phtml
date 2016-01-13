@@ -1,45 +1,13 @@
-<html>
- <head>
-  <title>Pianist Repertoire Manager</title>     
- </head>
-    <link rel='stylesheet' type='text/css' href='style.php' />
- <body>
-     <div id="container">
-         <div class="innerleft">
-
-         <form action="insert_composer.php" method="post" target="myResults">
-            <h1> Insert new Composer </h1>
-             
-             <div class="links">Lastname:</div> 
-             <div class="rechts"><input type="text" name="Composer_lastname"></div>
-            
-            <h2>Optional values:</h2>
-             
-             <div class="links">Firstname:</div> 
-             <div class="rechts"><input type="text" name="Composer_firstname"></div>
-             
-             <div class="links">Date of Birth: </div> 
-             <div class="rechts"><input type="date" name="Birthdate"></div>
-             
-             <div class="links">Place of Birth:</div> 
-             <div class="rechts"><input type="text" name="Birthplace"></div>
-                           
-             <div class="links">Country of Birth: </div> 
-             <div class="rechts"><input type="text" name="Birthcountry"></div> 
-             
-             <div class="links">Date of demise: </div> 
-             <div class="rechts"><input type="text" name="Dieddate"></div> 
-            
-             <input type="submit" class="center">
-         </form>    
-
-         <form action="insert_composition.php" method="post" target="myResults">
+?>
+<div id="container">
+    <div class="innerleft">
+        <form action="?" method="post">
             <h1> Insert new Composition </h1>
-             
-             <div class="links">Composer:</div> 
-             	<div class="rechts">
-                 <select name="Composer" style="width:125px">
-                    <option value="Albeniz"> Albeniz </option>
+
+            <div class="links">Composer:</div>
+            <div class="rechts">
+                <select name="ComposersID" style="width:125px">
+                    <option value="1"> Albeniz </option>
                     <option value="Bach"> Bach </option>
                     <option value="Bartok"> Bartok </option>
                     <option value="Beethoven"> Beethoven </option>
@@ -70,11 +38,11 @@
                     <option value="Tchaikovsky"> Tchaikovsky </option>
                     <option value="Liszt"> Liszt </option>
                 </select>
-           	 </div>
-             
-             <div class="links">Musical Form:</div> 
-             	<div class="rechts">
-                 <select name="Musical_Form" style="width:125px">
+            </div>
+
+            <div class="links">Musical Form:</div>
+            <div class="rechts">
+                <select name="MusicalForm" style="width:125px">
                     <option value="Air"> Air </option>
                     <option value="Arabesque"> Arabesque </option>
                     <option value="Bagatelle"> Bagatelle </option>
@@ -108,58 +76,57 @@
                     <option value="Variations"> Variations </option>
                     <option value="Waltz"> Waltz </option>
                 </select>
-           	 </div>
-             
-             <div class="links">Title:</div> 
-             <div class="rechts"><input type="text" name="Title"></div>
-             
-             
-             <div class="links">Opus:</div> 
-             <div class="rechts"><input type="text" name="Opus"></div>
-             
-             <div class="links">Movement:</div> 
-             <div class="rechts"><input type="text" name="Movement"></div>
-             
-             <div class="links">Length:</div> 
-             <div class="rechts"><input type="time" name="Length"></div>
-             
-             <div class="links">Difficulty:</div> 
-             	<div class="rechts">
-                 <select name="Difficulty" style="width:125px">
+            </div>
+
+            <div class="links">Title:</div>
+            <div class="rechts"><input type="text" name="Title"></div>
+
+
+            <div class="links">Opus:</div>
+            <div class="rechts"><input type="text" name="Opus"></div>
+
+            <div class="links">Movement:</div>
+            <div class="rechts"><input type="text" name="Movement"></div>
+
+            <div class="links">Length:</div>
+            <div class="rechts"><input type="time" name="Length"></div>
+
+            <div class="links">Difficulty:</div>
+            <div class="rechts">
+                <select name="Difficulty" style="width:125px">
                     <option value="Very Easy"> Very easy </option>
                     <option value="Easy"> Easy </option>
-                    <option value="Moderate"> Moderate </option> 
+                    <option value="Moderate"> Moderate </option>
                     <option value="Hard"> Hard </option>
                     <option value="Very Hard"> Very hard </option>
                     <option value="Insane"> Insane </option>
                     <option value="Impossible"> Impossible </option>
                 </select>
-           	 </div>
-             
-             <div class="links">Want to play?</div> 
-             	<div class="rechts">
-                 <select name="Want_to_play" style="width:125px">
+            </div>
+
+            <div class="links">Want to play?</div>
+            <div class="rechts">
+                <select name="WantToPlay" style="width:125px">
                     <option value="Yes"> Yes </option>
-                    <option value="No"> No </option> 
+                    <option value="No"> No </option>
                 </select>
-           	 </div>
-             
-             <div class="links">Concert ready?</div> 
-             	<div class="rechts">
-                 <select name="Concert_ready" style="width:125px">
+            </div>
+
+            <div class="links">Concert ready?</div>
+            <div class="rechts">
+                <select name="ConcertReady" style="width:125px">
                     <option value="Yes"> Yes </option>
-                    <option value="No"> No </option> 
+                    <option value="No"> No </option>
                 </select>
-           	 </div>
-             
-             <!--
-                Sheet music link or pdf file? 
-             -->
-             
-            <input type="submit" class="center">             
-         </form>
-             
-      </div>
+            </div>
+
+            <!--
+               Sheet music link or pdf file?
+            -->
+            <input type="hidden" name="action" value="addSong">
+
+            <input type="submit" class="center">
+        </form>
+
     </div>
-</body>
-</html>
+</div>
