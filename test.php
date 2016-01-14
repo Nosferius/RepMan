@@ -1,4 +1,5 @@
 <?php
+
 error_reporting(E_ALL);
 ini_set('display_errors', 'on');
 
@@ -21,6 +22,7 @@ $song->setConcertReady(2);
 
 $song->add();
 
+/*
 // Quick and dirty demo how to use object array in a view
 $songs = new Songs;
 foreach($songs->fetch() as $song){
@@ -39,6 +41,8 @@ foreach($songs->fetch() as $song){
 
 }
 
+*/
+
 /*
 $Composer = new composers;
 $Composer->setComposerFirstname("Test");
@@ -52,5 +56,3 @@ print_r($result);
 
 // $list = new composers;
 // $list->fetch();
-
-?>

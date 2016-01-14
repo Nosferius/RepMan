@@ -110,8 +110,6 @@ class MusicalForms
         $this->config = $config;
     }
 
-
-
 }
     // Edit Composer
     // Edit Composition
@@ -120,6 +118,3 @@ class MusicalForms
     // Add PDF to Compositions
     // Compile PDF from Playlist PDF's
     // Edit / Create PDF Vector based?
-
-?>
-

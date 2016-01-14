@@ -1,6 +1,7 @@
 <?php
 
-class postHandler {
+class postHandler
+{
 
     /**
      * postHandler constructor.
@@ -39,5 +40,3 @@ class postHandler {
         }
     }
 }
-
-?>

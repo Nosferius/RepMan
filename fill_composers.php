@@ -1,4 +1,5 @@
 <?php
+
 error_reporting(E_ALL);
 ini_set('display_errors', 'on');
 
@@ -45,4 +46,3 @@ foreach($data as $ComposerLastname)
     $form->add();
     echo "Added: ".$ComposerLastname."<br>";
 }
-?>

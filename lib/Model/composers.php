@@ -1,6 +1,7 @@
 <?php
 
-class composers{
+class composers
+{
     private $con;
     private $id;
     private $ComposerFirstname;
@@ -204,6 +205,4 @@ class composers{
         $this->Deceased = $Deceased;
     }
 
-};
-
-?>
+}

@@ -1,5 +1,7 @@
 <?php
-class controller {
+
+class controller
+{
     private $action;
     private $config;
     private $vars;
@@ -11,7 +13,7 @@ class controller {
 
     private function loadView($view)
     {
-        $code = file_get_contents("lib/View/".$view.".phtml");
+        $code = file_get_contents("lib/View/" . $view . ".phtml");
         return eval ($code);
     }
 
@@ -26,7 +28,7 @@ class controller {
         $this->loadVars();
         $html = $this->loadView("header");
         $html .= $this->loadView("navigation");
-        if($this->action != "") {
+        if ($this->action != "") {
             $html .= $this->loadView($this->action);
         }
         $html .= $this->loadView("footer");
@@ -81,8 +83,4 @@ class controller {
         $this->vars = $vars;
     }
 
-
 }
-
-
-?>

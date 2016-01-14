@@ -21,4 +21,3 @@ if(isset($_GET["action"])){
 $Controller->setAction($action);
 // $Controller->setAction("addSong");
 echo $Controller->run();
-?>

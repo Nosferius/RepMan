@@ -279,6 +279,4 @@ class Songs
         $this->config = $config;
     }
 
-
-
 }

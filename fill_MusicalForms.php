@@ -1,4 +1,5 @@
 <?php
+
 error_reporting(E_ALL);
 ini_set('display_errors', 'on');
 
@@ -47,4 +48,3 @@ foreach($data as $MusicalForm)
     $form->add();
     echo "Added: ".$MusicalForm."<br>";
 }
-?>
