@@ -1,5 +1,3 @@
-?>
-
 <?php
 
 class controller
@@ -28,7 +26,7 @@ class controller
     public function run()
     {
         $this->loadVars();
-        $html = $this->loadView("header");
+        $html  = $this->loadView("header");
         $html .= $this->loadView("navigation");
         if ($this->action != "") {
             $html .= $this->loadView($this->action);
