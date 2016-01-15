@@ -13,33 +13,15 @@ body {
     background-color: dimgray;
 }
 
-a {
-    border-width:4px 4px 0 4px;
-    border-style:ridge;
-    width: 110px;
-    height: 25px;
-    text-align: center;
-    color: goldenrod;
-    border-color: goldenrod;
-    display: block;
-    float: left;
-    text-decoration: none;
-
-    /* margin: 0 20px 0 0; */
-}
-
-a:hover {
-    color: silver;
-    border-color: silver;
-}
-
 .container {
     position: relative;
     top: 16px;
     left: -8px;
     float: left;
     padding: 5px;
-    width: 350px;
+    margin-right: 25px;
+    min-width: 350px;
+    width: 35%;
     height: 450px;
     border: 1px solid black;
     background-image: url("single_bar_sheet_music_empty_50opacity.png");
@@ -68,4 +50,24 @@ a:hover {
     left: 120px;
     width: 220px;
     text-align: center;
+}
+
+a {
+    border-width:4px 4px 0 4px;
+    border-style:ridge;
+    width: 110px;
+    height: 25px;
+    text-align: center;
+    color: goldenrod;
+    border-color: goldenrod;
+    display: block;
+    float: left;
+    text-decoration: none;
+
+    /* margin: 0 20px 0 0; */
+}
+
+a:hover {
+    color: silver;
+    border-color: silver;
 }
