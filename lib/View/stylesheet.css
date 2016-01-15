@@ -1,8 +1,38 @@
+body {
+    background-color: lightblue;
+}
+
+#navigation {
+    float: left;
+    height: 25px;
+    padding: 4px 0 0 2px;
+    width: 100%;
+    background-color: dimgray;
+}
+
+a:link {
+    color: gold;
+}
+
+a:hover {
+    color: purple;
+}
+
+a:visited {
+    color: darkorange;
+}
+
+a:active {
+    color: silver;
+}
+
 .container {
     float: left;
-    margin: 5px;
-    padding: 15px;
-    width: 300px;
-    height: 300px;
+    padding: 5px;
+    width: 350px;
+    height: 450px;
     border: 1px solid black;
+    background-image: url("Image.png");
+    background-position: -30px;
+    background-color: whitesmoke;
 }
