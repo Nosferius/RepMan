@@ -5,126 +5,112 @@
         <form action="?" method="post">
             <h1> Insert new Composition </h1>
 
-            <div class="links">Composer:</div>
-            <div class="rechts">
-                <select name="ComposersID" style="width:125px">
-                    <?php
-                        foreach ($this->vars["composers"] as $row)
-                        {
-                            echo '<option value="'.$row->getID().'"> '.$row->getComposerLastname().' </option>';
-                        }
-                    ?> <!--
-                    <option value="1"> Albeniz </option>
-                    <option value="Bach"> Bach </option>
-                    <option value="Bartok"> Bartok </option>
-                    <option value="Beethoven"> Beethoven </option>
-                    <option value="Busoni"> Busoni </option>
-                    <option value="Brahms"> Brahms </option>
-                    <option value="Chopin"> Chopin </option>
-                    <option value="Debussy"> Debussy </option>
-                    <option value="Franck"> Franck </option>
-                    <option value="Haydn"> Haydn </option>
-                    <option value="Joplin"> Joplin </option>
-                    <option value="Mendelssohn"> Mendelssohn </option>
-                    <option value="Mozart"> Mozart </option>
-                    <option value="Mussorgsky"> Mussorgsky </option>
-                    <option value="Paderewski"> Paderewski </option>
-                    <option value="Prokofiev"> Prokofiev </option>
-                    <option value="Rachmaninoff"> Rachmaninoff </option>
-                    <option value="Ravel"> Ravel </option>
-                    <option value="Rimski-Korsakov"> Rimski-Korsakov </option>
-                    <option value="Rubinstein"> Rubinstein </option>
-                    <option value="Saint-Saëns"> Saint-Saëns </option>
-                    <option value="Satie"> Satie </option>
-                    <option value="Scarlatti"> Scarlatti </option>
-                    <option value="Schubert"> Schubert </option>
-                    <option value="Schumann"> Schumann </option>
-                    <option value="Scriabin"> Scriabin </option>
-                    <option value="Shostakovich"> Shostakovich </option>
-                    <option value="Sibelius"> Sibelius </option>
-                    <option value="Tchaikovsky"> Tchaikovsky </option>
-                    <option value="Liszt"> Liszt </option> -->
-                </select>
+            <div class="formValues">
+                <label for="ComposersID">Composer:
+                    <select name="ComposersID"  class="formInput2">
+                        <?php
+                            foreach ($this->vars["composers"] as $row)
+                            {
+                                echo '<option value="'.$row->getID().'"> '.$row->getComposerLastname().' </option>';
+                            }
+                        ?>
+                    </select>
+                </label>
             </div>
 
-            <div class="links">Musical Form:</div>
-            <div class="rechts">
-                <select name="MusicalForm" style="width:125px">
-                    <option value="Air"> Air </option>
-                    <option value="Arabesque"> Arabesque </option>
-                    <option value="Bagatelle"> Bagatelle </option>
-                    <option value="Ballade"> Ballade </option>
-                    <option value="Barcarolle"> Barcarolle </option>
-                    <option value="Berceuse"> Berceuse </option>
-                    <option value="Canon"> Canon </option>
-                    <option value="Cantata"> Cantata </option>
-                    <option value="Caprice"> Caprice </option>
-                    <option value="Concerto"> Concerto </option>
-                    <option value="Etude"> Etude </option>
-                    <option value="Fantasia"> Fantasia </option>
-                    <option value="Fugue"> Fugue </option>
-                    <option value="Impromptu"> Impromptu </option>
-                    <option value="March"> March </option>
-                    <option value="Mazurka"> Mazurka </option>
-                    <option value="Minuet"> Minuet </option>
-                    <option value="Nocturne"> Nocturne </option>
-                    <option value="Partita"> Partita </option>
-                    <option value="Polonaise"> Polonaise </option>
-                    <option value="Prelude"> Prelude </option>
-                    <option value="Rhapsody"> Rhapsody </option>
-                    <option value="Rondo"> Rondo </option>
-                    <option value="Scherzo"> Scherzo </option>
-                    <option value="Sonata"> Sonata </option>
-                    <option value="Sonatina"> Sonatina </option>
-                    <option value="Suite"> Suite </option>
-                    <option value="Symphonic poem"> Symphonic poem </option>
-                    <option value="Tango"> Tango </option>
-                    <option value="Tocatta"> Tocatta </option>
-                    <option value="Variations"> Variations </option>
-                    <option value="Waltz"> Waltz </option>
-                </select>
+            <div class="formValues">
+                <label for="MusicalForm">Musical Form:
+                    <select name="MusicalForm"  class="formInput2">
+                        <option value="Air"> Air </option>
+                        <option value="Arabesque"> Arabesque </option>
+                        <option value="Bagatelle"> Bagatelle </option>
+                        <option value="Ballade"> Ballade </option>
+                        <option value="Barcarolle"> Barcarolle </option>
+                        <option value="Berceuse"> Berceuse </option>
+                        <option value="Canon"> Canon </option>
+                        <option value="Cantata"> Cantata </option>
+                        <option value="Caprice"> Caprice </option>
+                        <option value="Concerto"> Concerto </option>
+                        <option value="Etude"> Etude </option>
+                        <option value="Fantasia"> Fantasia </option>
+                        <option value="Fugue"> Fugue </option>
+                        <option value="Impromptu"> Impromptu </option>
+                        <option value="March"> March </option>
+                        <option value="Mazurka"> Mazurka </option>
+                        <option value="Minuet"> Minuet </option>
+                        <option value="Nocturne"> Nocturne </option>
+                        <option value="Partita"> Partita </option>
+                        <option value="Polonaise"> Polonaise </option>
+                        <option value="Prelude"> Prelude </option>
+                        <option value="Rhapsody"> Rhapsody </option>
+                        <option value="Rondo"> Rondo </option>
+                        <option value="Scherzo"> Scherzo </option>
+                        <option value="Sonata"> Sonata </option>
+                        <option value="Sonatina"> Sonatina </option>
+                        <option value="Suite"> Suite </option>
+                        <option value="Symphonic poem"> Symphonic poem </option>
+                        <option value="Tango"> Tango </option>
+                        <option value="Tocatta"> Tocatta </option>
+                        <option value="Variations"> Variations </option>
+                        <option value="Waltz"> Waltz </option>
+                    </select>
+                </label>
             </div>
 
-            <div class="links">Title:</div>
-            <div class="rechts"><input type="text" name="Title"></div>
-
-
-            <div class="links">Opus:</div>
-            <div class="rechts"><input type="text" name="Opus"></div>
-
-            <div class="links">Movement:</div>
-            <div class="rechts"><input type="text" name="Movement"></div>
-
-            <div class="links">Length:</div>
-            <div class="rechts"><input type="time" name="Length"></div>
-
-            <div class="links">Difficulty:</div>
-            <div class="rechts">
-                <select name="Difficulty" style="width:125px">
-                    <option value="Very Easy"> Very easy </option>
-                    <option value="Easy"> Easy </option>
-                    <option value="Moderate"> Moderate </option>
-                    <option value="Hard"> Hard </option>
-                    <option value="Very Hard"> Very hard </option>
-                    <option value="Insane"> Insane </option>
-                    <option value="Impossible"> Impossible </option>
-                </select>
+            <div class="formValues">
+                <label for="Title">Title:
+                    <input type="time" name="Title" class="formInput">
+                </label>
             </div>
 
-            <div class="links">Want to play?</div>
-            <div class="rechts">
-                <select name="WantToPlay" style="width:125px">
-                    <option value="Yes"> Yes </option>
-                    <option value="No"> No </option>
-                </select>
+            <div class="formValues">
+                <label for="Opus">Opus:
+                    <input type="time" name="Opus" class="formInput">
+                </label>
             </div>
 
-            <div class="links">Concert ready?</div>
-            <div class="rechts">
-                <select name="ConcertReady" style="width:125px">
-                    <option value="Yes"> Yes </option>
-                    <option value="No"> No </option>
-                </select>
+            <div class="formValues">
+                <label for="Movement">Movement:
+                    <input type="time" name="Movement" class="formInput">
+                </label>
+            </div>
+
+            <div class="formValues">
+                <label for="Length">Length:
+                    <input type="time" name="Length" class="formInput">
+                </label>
+            </div>
+
+            <div class="formValues">
+                <label for="WantToPlay">Want to Play:
+                    <select name="WantToPlay" class="formInput2">
+                        <option value="Yes"> Yes </option>
+                        <option value="No"> No </option>
+                    </select>
+                </label>
+            </div>
+
+            <div class="formValues">
+                <label for="Difficulty">Difficulty:
+                    <select name="Difficulty" class="formInput2">
+                        <option value="Very Easy"> Very easy </option>
+                        <option value="Easy"> Easy </option>
+                        <option value="Moderate"> Moderate </option>
+                        <option value="Hard"> Hard </option>
+                        <option value="Very Hard"> Very hard </option>
+                        <option value="Insane"> Insane </option>
+                        <option value="Impossible"> Impossible </option>
+                    </select>
+                </label>
+            </div>
+
+            <div class="formValues">
+                <label for="ConcertReady">Concert Ready?:
+                    <select name="ConcertReady" class="formInput2">
+                        <option value="Yes"> Yes </option>
+                        <option value="No"> No </option>
+                    </select>
+                </label>
             </div>
 
             <!--

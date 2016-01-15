@@ -6,25 +6,42 @@
         <form action="?" method="post">
             <h1> Insert new Composer </h1>
 
-            <label for="ComposerLastName" class="links">Lastname:</label>
-            <input type="text" name="ComposerLastname" class="rechts">
+            <div class="formValues">
+                <label for="ComposerLastName">Lastname:
+                    <input type="text" name="ComposerLastname" class="formInput">
+                </label>
+            </div>
 
             <h2>Optional values:</h2>
 
-            <div class="links">Firstname:</div>
-            <div class="rechts"><input type="text" name="ComposerFirstname"></div>
+            <div class="formValues">
+                <label for="ComposerFirstname">Firstname:
+                    <input type="text" name="ComposerFirstname" class="formInput">
+                </label>
+            </div>
 
-            <div class="links">Date of Birth: </div>
-            <div class="rechts"><input type="date" name="DateOfBirth"></div>
+            <div class="formValues">
+                <label for="DateOfBirth">Date of Birth:
+                    <input type="text" name="DateOfBirth" class="formInput">
+                </label>
+            </div>
+            <div class="formValues">
+                <label for="PlaceOfBirth">Place of Birth:
+                    <input type="text" name="PlaceOfBirth" class="formInput">
+                </label>
+            </div>
 
-            <div class="links">Place of Birth:</div>
-            <div class="rechts"><input type="text" name="PlaceOfBirth"></div>
+            <div class="formValues">
+                <label for="BirthCountry">Birthcountry:
+                    <input type="text" name="BirthCountry" class="formInput">
+                </label>
+            </div>
 
-            <div class="links">Birthcountry: </div>
-            <div class="rechts"><input type="text" name="BirthCountry"></div>
-
-            <div class="links">Deceased: </div>
-            <div class="rechts"><input type="text" name="Deceased"></div>
+            <div class="formValues">
+                <label for="Deceased">Deceased:
+                    <input type="text" name="Deceased" class="formInput">
+                </label>
+            </div>
 
             <input type="hidden" name="action" value="addComposer">
 
