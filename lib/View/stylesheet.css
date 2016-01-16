@@ -26,7 +26,7 @@ body {
     padding: 5px;
     margin-right: 25px;
     min-width: 350px;
-    width: 35%;
+    max-width: 35%;
     height: 450px;
     border: 1px solid black;
     background-image: url("single_bar_sheet_music_empty_50opacity.png");
