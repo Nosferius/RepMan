@@ -31,6 +31,7 @@ class controller
         if ($this->action != "") {
             $html .= $this->loadView($this->action);
         }
+        // set default opening page in elseif
         elseif ($this->action =! "") {
             $html .= $this->loadView("placeholder");
         }

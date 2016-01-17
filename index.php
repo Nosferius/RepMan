@@ -23,9 +23,9 @@ if(isset($_GET["action"])){
 }
 
 // If there is no get action, use the post action
-if(empty($action)){
+/* if(empty($action)){
     $action = $_POST["action"];
-}
+}*/
 
 $Controller->setAction($action);
 // $Controller->setAction("addSong");
