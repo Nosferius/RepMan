@@ -13,11 +13,20 @@ require_once('lib/Controller/postHandler.php');
 
 $postHandler = new postHandler();
 $postHandler->run();
+
 $Controller = new controller();
-$action = "";
+$action     = "";
+
+// If there's an action tell the controller
 if(isset($_GET["action"])){
     $action = $_GET["action"];
 }
+
+// If there is no get action, use the post action
+if(empty($action)){
+    $action = $_POST["action"];
+}
+
 $Controller->setAction($action);
 // $Controller->setAction("addSong");
 echo $Controller->run();
