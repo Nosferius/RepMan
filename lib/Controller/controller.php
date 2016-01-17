@@ -31,6 +31,9 @@ class controller
         if ($this->action != "") {
             $html .= $this->loadView($this->action);
         }
+        elseif ($this->action =! "") {
+            $html .= $this->loadView("placeholder");
+        }
         $html .= $this->loadView("footer");
         return $html;
     }
