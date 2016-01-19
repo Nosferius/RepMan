@@ -1,0 +1,64 @@
+BUGS
+legend
+GIVEN <i'm on some page> WHEN I <do something> THEN <this happens> (I EXPECTED <this to happen>)
+
+No bugs yet!
+
+TECHNICAL DEBT
+legend:
+<something> should be <something else>
+
+- Test and Main2 Views are in the Header, they should be separate views and called separately in the actionToViewMap in
+  the controller
+
+- The controller is one file, one class, it should be an abstract class with a sibling for each function
+
+-
+
+
+FEATURES
+
+Add Song [DONE]
+Add Composer [DONE]
+View Songs  [USER STORY]
+VIEW Compsoser [USER STORY]
+
+Add Playlist
+Edit Composer
+Edit Song
+Edit Playlist
+View Song
+View Playlist
+
+
+legend:
+User story, story points
+    - subtask
+    - subtask
+
+
+As a user I would like to see the songs stored in the database
+    - Expand Controller to have functions per action (5)    [DONE]
+    - Expand Controller with action: show all songs (3)     [DONE]
+    - Expand Controller with action: show song by id (3)
+    - Build view for show all songs (3)
+    - Build view for show song (3)
+
+As a user I would like to see the composers stored in the database
+    - Build action for see all composers (3)
+    - Build view ror see al songs (3)
+
+As a user I would like to build a playlist consisting of songs in the database
+    - Build playlist database table (3)
+    - Build playlist model
+    - Expand Controller with action: add playlist
+    - Expand Controller with action: showPlaylists
+    - Expand Controller with action: showPlaylist
+    - Build add playlist view
+    - Build show playlists view
+    - Build show playlist view
+
+
+
+
+(MAKE MORE USER STORIES..)

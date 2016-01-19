@@ -4,10 +4,10 @@ CREATE TABLE Composers (
   ID INT UNSIGNED NOT NULL AUTO_INCREMENT, PRIMARY KEY (ID),
   ComposerFirstname varchar (255),
   ComposerLastname varchar (255) NOT NULL,
-  Birthdate DATE,
-  Birthplace varchar (255),
+  DateOfBirth DATE,
+  PlaceOfBirth varchar (255),
   BirthCountry varchar (255),
-  Dieddate varchar (255)
+  Deceased varchar (255)
 );
 
 CREATE TABLE Songs (
