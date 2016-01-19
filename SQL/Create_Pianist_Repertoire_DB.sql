@@ -2,11 +2,11 @@ CREATE DATABASE Pianist_repertoire;
 
 CREATE TABLE Composers (
   ID INT UNSIGNED NOT NULL AUTO_INCREMENT, PRIMARY KEY (ID),
-  Composer_firstname varchar (255),
-  Composer_lastname varchar (255) NOT NULL,
+  ComposerFirstname varchar (255),
+  ComposerLastname varchar (255) NOT NULL,
   Birthdate DATE,
   Birthplace varchar (255),
-  Birthcountry varchar (255),
+  BirthCountry varchar (255),
   Dieddate varchar (255)
 );
 
