@@ -43,10 +43,10 @@ class controller
         $this->actionToViewMap = [
             'addSong'       => ['addSong'],
             'addComposer'   => ['addComposer'],
-            'editSong'   => ['showSongs', 'editSong'],
-            'editComposer'   => ['showComposers', 'editComposer'],
+            'editSong'      => ['showSongs', 'editSong'],
+            'editComposer'  => ['showComposers', 'editComposer'],
             'showSongs'     => ['showSongs'],
-            'showComposers'     => ['showComposers'],
+            'showComposers' => ['showComposers'],
             // XXX:Temporary for demonstration:
             'everyThing'    => ['showSongs', 'addSong', 'addComposer', 'showComposers'],
         ];
