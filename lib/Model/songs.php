@@ -64,25 +64,29 @@ class Songs
 
     public function update()
     {
+        /*
+                $sql = "UPDATE `Songs` SET `ComposersID`=?,`MusicalForm`=?,`Title`=?,`Opus`=?,`Movement`=?,
+                `Length`=?,`Difficulty`=?,`WantToPlay`=?,`ConcertReady`=? WHERE `id`=?";
+        */
         $sql = "UPDATE
-                Songs SET ComposersID=?, MusicalForm=?, Title=?, Opus=?, Movement=?, Length=?, Difficulty=?, WantToPlay=?, ConcertReady=?
-                WHERE id =?";
+                Songs SET ComposersID=?, MusicalForm=?, Title=?, Opus=?, Movement=?,
+                Length=?, Difficulty=?, WantToPlay=?, ConcertReady=? WHERE id=?";
         $sth = $this->con->prepare($sql);
         if (!$sth) {
             echo "\nPDO::errorInfo():\n";
             print_r($this->con->errorInfo());
             die();
         }
-        $sth->bindParam(1, $this->ComposersID, PDO::PARAM_STR);
+        $sth->bindParam(1, $this->ComposersID, PDO::PARAM_INT);
         $sth->bindParam(2, $this->MusicalForm, PDO::PARAM_STR);
         $sth->bindParam(3, $this->Title, PDO::PARAM_STR);
-        $sth->bindParam(4, $this->Opus, PDO::PARAM_STR);
-        $sth->bindParam(5, $this->Movement, PDO::PARAM_STR);
+        $sth->bindParam(4, $this->Opus, PDO::PARAM_INT);
+        $sth->bindParam(5, $this->Movement, PDO::PARAM_INT);
         $sth->bindParam(6, $this->Length, PDO::PARAM_STR);
         $sth->bindParam(7, $this->Difficulty, PDO::PARAM_STR);
-        $sth->bindParam(8, $this->WantToPlay, PDO::PARAM_STR);
-        $sth->bindParam(9, $this->ConcertReady, PDO::PARAM_STR);
-        $sth->bindParam(10, $this->id, PDO::PARAM_STR);
+        $sth->bindParam(8, $this->WantToPlay, PDO::PARAM_INT);
+        $sth->bindParam(9, $this->ConcertReady, PDO::PARAM_INT);
+        $sth->bindParam(10, $this->ID, PDO::PARAM_INT);
         $sth->execute();
 
         // Catch error if connection fails
