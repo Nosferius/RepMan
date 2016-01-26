@@ -1,7 +1,28 @@
 ?>
+
 <div class="container">
     Dit is de showSongs view
-    <?php // print_r($this->vars['songs']) ?>
+    <?php
+        if (array_key_exists('songs', $this->vars) && !empty($this->vars['songs'])){
+            foreach ($this->vars['songs'] as $song) {
+                ?>
+
+                <ul>
+                    <li><?= $song->getMusicalForm(); ?></li>
+                    <a href="?action=editSong&id=<?= $song->getID(); ?>" class="edit">
+                        <li><?= $song->getTitle(); ?></li>
+                    </a>
+                    <li><?= $song->getOpus(); ?></li>
+                    <li><?= $song->getMovement(); ?></li>
+                    <li><?= $song->getLength(); ?></li>
+                    <li><?= $song->getDifficulty(); ?></li>
+                    <li><?= $song->getWantToPlay(); ?></li>
+                    <li><?= $song->getConcertReady(); ?></li>
+                </ul>
+                <?php
+            }
+        }
+    ?>
 </div>
 
 

@@ -25,6 +25,17 @@ class postHandler
             $composer->setDeceased($_POST["Deceased"]);
             $composer->add();
         }
+        elseif ($_POST["action"] == "updateComposer"){
+            $composer = new composers();
+            $composer->setComposerFirstname($_POST["ComposerFirstname"]);
+            $composer->setComposerLastname($_POST["ComposerLastname"]);
+            $composer->setDateOfBirth($_POST["DateOfBirth"]);
+            $composer->setPlaceOfBirth($_POST["PlaceOfBirth"]);
+            $composer->setBirthCountry($_POST["BirthCountry"]);
+            $composer->setDeceased($_POST["Deceased"]);
+            $composer->setID($_POST["id"]);
+            $composer->update();
+        }
         elseif ($_POST["action"] == "addSong"){
             $song = new Songs();
             $song->setComposersID($_POST["ComposersID"]);
@@ -38,5 +49,20 @@ class postHandler
             $song->setConcertReady($_POST["ConcertReady"]);
             $song->add();
         }
+        elseif ($_POST["action"] == "updateSong"){
+            $song = new Songs();
+            $song->setComposersID($_POST["ComposersID"]);
+            $song->setMusicalForm($_POST["MusicalForm"]);
+            $song->setTitle($_POST["Title"]);
+            $song->setOpus($_POST["Opus"]);
+            $song->setMovement($_POST["Movement"]);
+            $song->setLength($_POST["Length"]);
+            $song->setDifficulty($_POST["Difficulty"]);
+            $song->setWantToPlay($_POST["WantToPlay"]);
+            $song->setConcertReady($_POST["ConcertReady"]);
+            $song->setID($_POST["id"]);
+            $song->update();
+        }
+
     }
 }

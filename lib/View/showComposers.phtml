@@ -1,0 +1,28 @@
+?>
+
+<div class="container">
+    <?php
+
+        if (array_key_exists('composers',$this->vars)) {
+            foreach ($this->vars['composers'] as $composer) {
+                ?>
+                <ul>
+
+                    <li>
+                        <a href="?action=editComposer&id=<?= $composer->getID(); ?>" class="edit">
+                            <?= $composer->getComposerLastname(); ?>
+                        </a>
+                    </li>
+
+                    <li><?= $composer->getComposerLastname(); ?></li>
+                    <li><?= $composer->getDateOfBirth(); ?></li>
+                    <li><?= $composer->getPlaceOfBirth(); ?></li>
+                    <li><?= $composer->getBirthCountry(); ?></li>
+                    <li><?= $composer->getDeceased(); ?></li>
+                </ul>
+                <?php
+            }
+        }
+    ?>
+
+</div>

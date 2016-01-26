@@ -7,7 +7,7 @@ CREATE TABLE Composers (
   DateOfBirth DATE,
   PlaceOfBirth varchar (255),
   BirthCountry varchar (255),
-  Deceased varchar (255)
+  Deceased DATE (255)
 );
 
 CREATE TABLE Songs (

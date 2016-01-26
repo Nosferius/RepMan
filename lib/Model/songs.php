@@ -62,6 +62,38 @@ class Songs
         }
     }
 
+    public function update()
+    {
+        $sql = "UPDATE
+                Songs SET ComposersID=?, MusicalForm=?, Title=?, Opus=?, Movement=?, Length=?, Difficulty=?, WantToPlay=?, ConcertReady=?
+                WHERE id =?";
+        $sth = $this->con->prepare($sql);
+        if (!$sth) {
+            echo "\nPDO::errorInfo():\n";
+            print_r($this->con->errorInfo());
+            die();
+        }
+        $sth->bindParam(1, $this->ComposersID, PDO::PARAM_STR);
+        $sth->bindParam(2, $this->MusicalForm, PDO::PARAM_STR);
+        $sth->bindParam(3, $this->Title, PDO::PARAM_STR);
+        $sth->bindParam(4, $this->Opus, PDO::PARAM_STR);
+        $sth->bindParam(5, $this->Movement, PDO::PARAM_STR);
+        $sth->bindParam(6, $this->Length, PDO::PARAM_STR);
+        $sth->bindParam(7, $this->Difficulty, PDO::PARAM_STR);
+        $sth->bindParam(8, $this->WantToPlay, PDO::PARAM_STR);
+        $sth->bindParam(9, $this->ConcertReady, PDO::PARAM_STR);
+        $sth->bindParam(10, $this->id, PDO::PARAM_STR);
+        $sth->execute();
+
+        // Catch error if connection fails
+        // todo: throw Exception instead of echo and die
+        if ($sth->errorCode() != '00000') {
+            echo "\nPDO::errorInfo()\n";
+            print_r($sth->errorInfo());
+            die();
+        }
+    }
+
     /**
      * @return array
      */
@@ -85,6 +117,29 @@ class Songs
             $songs[] = $song;
         }
         return $songs;
+    }
+
+    public function fetchByID()
+    {
+        $sql    = 'SELECT * FROM Songs WHERE id = ?';
+        $sth = $this->con->prepare($sql);
+
+        $sth->bindParam(1, $_GET['id'], PDO::PARAM_INT);
+
+        $sth->execute();
+
+        $row = $sth->fetch(PDO::FETCH_ASSOC);
+        $this->setID($row['ID']);
+        $this->setComposersID($row['ComposersID']);
+        $this->setMusicalForm($row['MusicalForm']);
+        $this->setTitle($row['Title']);
+        $this->setOpus($row['Opus']);
+        $this->setMovement($row['Movement']);
+        $this->setLength($row['Length']);
+        $this->setDifficulty($row['Difficulty']);
+        $this->setWantToPlay($row['WantToPlay']);
+        $this->setConcertReady($row['ConcertReady']);
+        return $this;
     }
 
     /**

@@ -1,0 +1,90 @@
+?>
+
+<div class="container">
+    Dit is de editSongs view
+    <?php
+    //fixmakemusicalformpulldownanddisplaycomposernamenotid
+    if (array_key_exists('song',$this->vars)) {
+
+        ?>
+        <div class="container">
+            <div class="innerleft">
+
+                <form action="?" method="post">
+                    <h1> Insert new song </h1>
+
+                    <div class="formValues">
+                        <label for="ComposersID">Composer:
+                            <input type="text" name="ComposersID" class="formInput" value="<?= $this->vars['song']->getComposersID(); ?>">
+                        </label>
+                    </div>
+
+                    <div class="formValues">
+                        <label for="MusicalForm">MusicalForm:
+                            <input type="text" name="MusicalForm" class="formInput" value="<?= $this->vars['song']->getMusicalForm(); ?>">
+                        </label>
+                    </div>
+
+                    <div class="formValues">
+                        <label for="Title">Title:
+                            <input type="text" name="Title" class="formInput" value="<?= $this->vars['song']->getTitle(); ?>">
+                        </label>
+                    </div>
+
+                    <div class="formValues">
+                        <label for="Opus">Opus:
+                            <input type="text" name="Opus" class="formInput" value="<?= $this->vars['song']->getOpus(); ?>">
+                        </label>
+                    </div>
+                    <div class="formValues">
+                        <label for="Movement">Movement:
+                            <input type="text" name="Movement" class="formInput" value="<?= $this->vars['song']->getMovement(); ?>">
+                        </label>
+                    </div>
+
+                    <div class="formValues">
+                        <label for="Length">Length:
+                            <input type="text" name="Length" class="formInput" value="<?= $this->vars['song']->getLength(); ?>">
+                        </label>
+                    </div>
+
+                    <div class="formValues">
+                        <label for="Difficulty">Difficulty:
+                            <input type="text" name="Difficulty" class="formInput" value="<?= $this->vars['song']->getDifficulty(); ?>">
+                        </label>
+                    </div>
+
+                    <div class="formValues">
+                        <label for="WantToPlay">WantToPlay:
+                            <input type="text" name="WantToPlay" class="formInput" value="<?= $this->vars['song']->getWantToPlay(); ?>">
+                        </label>
+                    </div>
+
+                    <div class="formValues">
+                        <label for="ConcertReady">ConcertReady:
+                            <input type="number" name="ConcertReady" class="formInput" value="<?= $this->vars['song']->getConcertReady(); ?>">
+                        </label>
+                    </div>
+
+                    <input type="hidden" name="id" value="<?= $this->vars['song']->getID(); ?>">
+
+
+                    <input type="hidden" name="action" value="updateSong">
+
+                    <input type="submit" class="center">
+                </form>
+            </div>
+        </div>
+        <?php
+    }
+    ?>
+</div>
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,69 @@
+?>
+
+<div class="container">
+    Dit is de editComposer view
+    <?php
+
+    if (array_key_exists('composer',$this->vars)) {
+
+        ?>
+        <div class="container">
+            <div class="innerleft">
+
+                <form action="?" method="post">
+                    <h1> Insert new Composer </h1>
+
+                    <div class="formValues">
+                        <label for="ComposerLastName">Lastname:
+                            <input type="text" name="ComposerLastname" class="formInput" value="<?= $this->vars['composer']->getComposerLastname(); ?>">
+                        </label>
+                    </div>
+
+                    <h2>Optional values:</h2>
+
+                    <div class="formValues">
+                        <label for="ComposerFirstname">Firstname:
+                            <input type="text" name="ComposerFirstname" class="formInput" value="<?= $this->vars['composer']->getComposerFirstname(); ?>">
+                        </label>
+                    </div>
+
+                    <div class="formValues">
+                        <label for="DateOfBirth">Date of Birth:
+                            <input type="date" name="DateOfBirth" class="formInput" value="<?= $this->vars['composer']->getDateOfBirth(); ?>">
+                        </label>
+                    </div>
+                    <div class="formValues">
+                        <label for="PlaceOfBirth">Place of Birth:
+                            <input type="text" name="PlaceOfBirth" class="formInput" value="<?= $this->vars['composer']->getPlaceOfBirth(); ?>">
+                        </label>
+                    </div>
+
+                    <div class="formValues">
+                        <label for="BirthCountry">Birthcountry:
+                            <input type="text" name="BirthCountry" class="formInput" value="<?= $this->vars['composer']->getBirthCountry(); ?>">
+                        </label>
+                    </div>
+
+                    <div class="formValues">
+                        <label for="Deceased">Deceased:
+                            <input type="date" name="Deceased" class="formInput" value="<?= $this->vars['composer']->getDeceased(); ?>">
+                        </label>
+                    </div>
+
+                            <input type="hidden" name="id" value="<?= $this->vars['composer']->getID(); ?>">
+
+
+                    <input type="hidden" name="action" value="updateComposer">
+
+                    <input type="submit" class="center">
+                </form>
+            </div>
+        </div>
+        <?php
+    }
+    ?>
+</div>
+
+
+
+
