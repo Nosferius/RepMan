@@ -43,9 +43,12 @@ class controller
         $this->actionToViewMap = [
             'addSong'       => ['addSong'],
             'addComposer'   => ['addComposer'],
+            'editSong'   => ['showSongs', 'editSong'],
+            'editComposer'   => ['showComposers', 'editComposer'],
             'showSongs'     => ['showSongs'],
+            'showComposers'     => ['showComposers'],
             // XXX:Temporary for demonstration:
-            'everyThing'    => ['addSong', 'addComposer', 'showSongs', 'addSong'],
+            'everyThing'    => ['showSongs', 'addSong', 'addComposer', 'showComposers'],
         ];
     }
 
@@ -95,10 +98,30 @@ class controller
         return $html;
     }
 
-    public function showAllSongs()
+    public function showSongs()
     {
         $songs               = new songs();
         $this->vars['songs'] = $songs->fetch();
+    }
+    public function showComposers()
+    {
+    }
+
+    public function editSong() {
+        $songs               = new songs();
+        $this->vars['songs'] = $songs->fetch();
+
+        $song               = new songs();
+        if  (array_key_exists('id',$_GET)) {
+            $this->vars['song'] = $song->fetchByID($_GET['id']);
+        }
+    }
+
+    public function editComposer() {
+        $composer               = new composers();
+        if  (array_key_exists('id',$_GET)) {
+            $this->vars['composer'] = $composer->fetchByID($_GET['id']);
+        }
     }
 
     // future controller functions
@@ -154,6 +177,22 @@ class controller
     public function setVars($vars)
     {
         $this->vars = $vars;
+    }
+
+    /**
+     * @return array
+     */
+    public function getActionToViewMap()
+    {
+        return $this->actionToViewMap;
+    }
+
+    /**
+     * @param array $actionToViewMap
+     */
+    public function setActionToViewMap($actionToViewMap)
+    {
+        $this->actionToViewMap = $actionToViewMap;
     }
 
 }
