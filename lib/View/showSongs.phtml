@@ -2,27 +2,43 @@
 
 <div class="container">
     Dit is de showSongs view
+
+    <table>
+        <tr>
+            <th>Composer</th>
+            <th>Title</th>
+            <th>Opus</th>
+            <th>Mvt.</th>
+            <th>Length</th>
+            <th>Difficulty</th>
+            <th>Wish list?</th>
+            <th>Mastered?</th>
+        </tr>
     <?php
         if (array_key_exists('songs', $this->vars) && !empty($this->vars['songs'])){
             foreach ($this->vars['songs'] as $song) {
                 ?>
 
-                <ul>
-                    <li><?= $song->getMusicalForm(); ?></li>
-                    <a href="?action=editSong&id=<?= $song->getID(); ?>" class="edit">
-                        <li><?= $song->getTitle(); ?></li>
-                    </a>
-                    <li><?= $song->getOpus(); ?></li>
-                    <li><?= $song->getMovement(); ?></li>
-                    <li><?= $song->getLength(); ?></li>
-                    <li><?= $song->getDifficulty(); ?></li>
-                    <li><?= $song->getWantToPlay(); ?></li>
-                    <li><?= $song->getConcertReady(); ?></li>
-                </ul>
+                <tr>
+                    <td><?= $song->getMusicalForm(); ?></td>
+                    <td>
+                        <a href="?action=editSong&id=<?= $song->getID(); ?>" class="edit">
+                            <?= $song->getTitle(); ?>
+                        </a>
+                    </td>
+                    <td><?= $song->getOpus(); ?></td>
+                    <td><?= $song->getMovement(); ?></td>
+                    <td><?= $song->getLength(); ?></td>
+                    <td><?= $song->getDifficulty(); ?></td>
+                    <td><?= $song->getWantToPlay(); ?></td>
+                    <td><?= $song->getConcertReady(); ?></td>
+                </tr>
+
                 <?php
             }
         }
     ?>
+    </table>
 </div>
 
 

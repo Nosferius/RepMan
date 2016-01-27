@@ -1,28 +1,37 @@
 ?>
 
 <div class="container">
+    <table>
+        <tr>
+            <th>Lastname</th>
+            <th>Firstname</th>
+            <th>Date of birth</th>
+            <th>Place of birth</th>
+            <th>Birth Country</th>
+            <th>Deceaed</th>
+        </tr>
     <?php
 
         if (array_key_exists('composers',$this->vars)) {
             foreach ($this->vars['composers'] as $composer) {
                 ?>
-                <ul>
-
-                    <li>
+                <tr>
+                
+                    <td>
                         <a href="?action=editComposer&id=<?= $composer->getID(); ?>" class="edit">
                             <?= $composer->getComposerLastname(); ?>
                         </a>
-                    </li>
+                    </td>
 
-                    <li><?= $composer->getComposerLastname(); ?></li>
-                    <li><?= $composer->getDateOfBirth(); ?></li>
-                    <li><?= $composer->getPlaceOfBirth(); ?></li>
-                    <li><?= $composer->getBirthCountry(); ?></li>
-                    <li><?= $composer->getDeceased(); ?></li>
-                </ul>
+                    <td><?= $composer->getComposerLastname(); ?></td>
+                    <td><?= $composer->getDateOfBirth(); ?></td>
+                    <td><?= $composer->getPlaceOfBirth(); ?></td>
+                    <td><?= $composer->getBirthCountry(); ?></td>
+                    <td><?= $composer->getDeceased(); ?></td>
+                </tr>
                 <?php
             }
         }
     ?>
-
+    </table>
 </div>
