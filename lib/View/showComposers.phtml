@@ -1,6 +1,7 @@
 ?>
 
 <div class="container">
+    <h2> Show Composers</h2>
     <table>
         <tr>
             <th>Lastname</th>
@@ -16,14 +17,16 @@
             foreach ($this->vars['composers'] as $composer) {
                 ?>
                 <tr>
-                
                     <td>
+                        <a href="?action=editComposer&id=<?= $composer->getID(); ?>" class="edit">
+                            <?= $composer->getComposerFirstname(); ?></td>
+                        </a>
+                    <td class="override">
                         <a href="?action=editComposer&id=<?= $composer->getID(); ?>" class="edit">
                             <?= $composer->getComposerLastname(); ?>
                         </a>
                     </td>
 
-                    <td><?= $composer->getComposerLastname(); ?></td>
                     <td><?= $composer->getDateOfBirth(); ?></td>
                     <td><?= $composer->getPlaceOfBirth(); ?></td>
                     <td><?= $composer->getBirthCountry(); ?></td>

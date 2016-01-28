@@ -1,17 +1,15 @@
 ?>
 
-<div class="container">
-    Dit is de editSongs view
     <?php
     //fixmakemusicalformpulldownanddisplaycomposernamenotid
+    //alsofixanoptiontoonlyshowsongsbycomposerX
     if (array_key_exists('song',$this->vars)) {
 
         ?>
         <div class="container">
-            <div class="innerleft">
+            <h2> Edit Song </h2>
 
                 <form action="?" method="post">
-                    <h1> Insert new song </h1>
 
                     <div class="formValues">
                         <label for="ComposersID">Composer:
@@ -73,11 +71,10 @@
                     <input type="submit" class="center">
                 </form>
             </div>
-        </div>
         <?php
     }
     ?>
-</div>
+
 
 
 

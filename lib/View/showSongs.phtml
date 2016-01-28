@@ -1,18 +1,18 @@
 ?>
 
 <div class="container">
-    Dit is de showSongs view
+    <h2> Show Songs</h2>
 
     <table>
         <tr>
-            <th>Composer</th>
+            <th>Musical Form</th>
             <th>Title</th>
             <th>Opus</th>
             <th>Mvt.</th>
             <th>Length</th>
             <th>Difficulty</th>
-            <th>Wish list?</th>
-            <th>Mastered?</th>
+            <th>Want to play?</th>
+            <th>Concert ready?</th>
         </tr>
     <?php
         if (array_key_exists('songs', $this->vars) && !empty($this->vars['songs'])){
@@ -21,7 +21,7 @@
 
                 <tr>
                     <td><?= $song->getMusicalForm(); ?></td>
-                    <td>
+                    <td class="override">
                         <a href="?action=editSong&id=<?= $song->getID(); ?>" class="edit">
                             <?= $song->getTitle(); ?>
                         </a>

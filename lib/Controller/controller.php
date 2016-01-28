@@ -48,7 +48,7 @@ class controller
             'showSongs'     => ['showSongs'],
             'showComposers' => ['showComposers'],
             // XXX:Temporary for demonstration:
-            'everyThing'    => ['showSongs', 'addSong', 'addComposer', 'showComposers'],
+            'everyThing'    => ['showSongs', 'addSong', 'editSong', 'showComposers', 'addComposer', 'editComposer']
         ];
     }
 
@@ -90,6 +90,7 @@ class controller
         // Set default opening page in elseif if no action is given
         elseif ($this->action =! "") {
             $html .= $this->loadView("placeholder");
+            $html .= $this->loadView("showSongs");
         }
 
         // Always include footer
