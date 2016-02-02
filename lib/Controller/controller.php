@@ -50,12 +50,19 @@ class controller
             // XXX:Temporary for demonstration:
             'everyThing'    => ['showSongs', 'addSong', 'editSong', 'showComposers', 'addComposer', 'editComposer']
         ];
+
+        // Actions default to themselves unless otherwise specified.
+        // fixme: not implemented
+        $this->nextActionMap = [
+            'something' => 'somethingElse'
+
+        ];
     }
 
     private function loadView($view)
     {
         $code = file_get_contents("lib/View/" . $view . ".phtml");
-        return eval ($code);
+        return eval ("?>" . $code);
     }
 
     private function loadVars()
@@ -76,6 +83,12 @@ class controller
         if(method_exists($this,$this->action)){
             $this->{$this->action}();
         };
+
+        // Always use last action as action
+
+        $this->vars['action'] = $this->action;
+
+        // Unless overridden by fixme: not implemented
 
         // Always include header and navigation
         $html  = $this->loadView("header");
