@@ -1,6 +1,5 @@
 <?php
 
-
 /**
  * Class controller
  *
@@ -22,15 +21,18 @@ class controller
     private $config;
 
     /**
-     * @var array
+     * @var array used to fetch vars
      */
     private $vars;
 
     /**
-     * @var array
+     * @var array used to set menu actions
      */
     private $actionToViewMap;
 
+    /**
+     * construct defines actions versus what views to load and what to do when no choice was made
+     */
     public function __construct()
     {
         // Define type of the variables in the class
@@ -55,22 +57,31 @@ class controller
         // fixme: not implemented
         $this->nextActionMap = [
             'something' => 'somethingElse'
-
         ];
     }
 
+    /**
+     * This function loads the selected view through eval and concatenates a ?> to every view,
+     * this is required to run the code without errors
+     */
     private function loadView($view)
     {
         $code = file_get_contents("lib/View/" . $view . ".phtml");
         return eval ("?>" . $code);
     }
 
+    /**
+     * Loads variables to be used later
+     */
     private function loadVars()
     {
         $composers               = new composers();
         $this->vars["composers"] = $composers->fetch();
     }
 
+    /**
+     * run brings all views and vars together
+     */
     public function run()
     {
         $this->loadVars();
@@ -112,16 +123,24 @@ class controller
         return $html;
     }
 
+    /**
+     * makes sure variables for songs are fetched properly
+     */
     public function showSongs()
     {
         $songs               = new songs();
         $this->vars['songs'] = $songs->fetch();
     }
+
+    // fixme: finalize this function
     public function showComposers()
         //forlateruse
     {
     }
 
+    /**
+     * makes sure variables for song editing are fetched properly
+     */
     public function editSong() {
         $songs               = new songs();
         $this->vars['songs'] = $songs->fetch();
@@ -132,6 +151,9 @@ class controller
         }
     }
 
+    /**
+     * makes sure variables for composer editing are fetched properly
+     */
     public function editComposer() {
         $composer               = new composers();
         if  (array_key_exists('id',$_GET)) {
