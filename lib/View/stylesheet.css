@@ -71,25 +71,6 @@ th {
     width: 80px;
 }
 
-#main {
-    position: relative;
-    top: 35px;
-    width: 35%;
-    min-width: 480px;
-    min-height: 50px;
-    margin-left: 25%;
-    margin-right: 25%;
-    padding: 8px;
-    height: auto;
-    float: left;
-    background-image: url("single_bar_sheet_music_empty_50opacity.png");
-    background-repeat: no-repeat;
-    background-position: 5px;
-    background-color: whitesmoke;
-    border: 1px solid gray;
-    border-radius: 25px;
-}
-
 .formValues {
     position: relative;
     width: auto;

@@ -1,7 +1,9 @@
 <?php
 
+/** class Songs */
+
 class Songs
-{
+    {
     private $con;
     private $ID;
     private $ComposersID;
@@ -26,7 +28,7 @@ class Songs
     }
 
     /**
-     *
+     * Insert song into DB
      */
     public function add()
     {
@@ -62,12 +64,11 @@ class Songs
         }
     }
 
+    /**
+     * Update song DB
+     */
     public function update()
     {
-        /*
-                $sql = "UPDATE `Songs` SET `ComposersID`=?,`MusicalForm`=?,`Title`=?,`Opus`=?,`Movement`=?,
-                `Length`=?,`Difficulty`=?,`WantToPlay`=?,`ConcertReady`=? WHERE `id`=?";
-        */
         $sql = "UPDATE
                 Songs SET ComposersID=?, MusicalForm=?, Title=?, Opus=?, Movement=?,
                 Length=?, Difficulty=?, WantToPlay=?, ConcertReady=? WHERE id=?";
@@ -99,7 +100,7 @@ class Songs
     }
 
     /**
-     * @return array
+     * Fetch all from Songs DB and set all fetched data to parameters
      */
     public function fetch()
     {
@@ -123,6 +124,9 @@ class Songs
         return $songs;
     }
 
+    /**
+     * Fetch Song by ID and set all parameters
+     */
     public function fetchByID()
     {
         $sql    = 'SELECT * FROM Songs WHERE id = ?';

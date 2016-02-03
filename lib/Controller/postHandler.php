@@ -10,6 +10,9 @@ class postHandler
     {
     }
 
+    // fixme: fetch values to be set through foreach loops through the respective db tables,
+    // this cleans up below code a lot and prevents coding things double in future
+
     public function run()
     {
         if (!isset($_POST["action"])){
